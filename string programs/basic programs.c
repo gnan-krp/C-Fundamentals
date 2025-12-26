@@ -91,4 +91,28 @@ void main() {
     rev[j]='\0';
     printf("Reversed String Is : %s",rev);
 }
+
+
+#include<stdio.h>
+void main(){
+    int flag=0,i;
+    char sr1[20],sr2[20];
     
+    printf("Enter First String = ");
+    scanf("%s",sr1);
+    printf("Enter Second String = ");
+    scanf("%s",sr2);
+    
+    for(i=0;sr1[i]!='\0' || sr2[i]!='\0';i++){
+        if(sr1[i]!=sr2[i]){
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0){
+        printf("Entered Strings Are Same");
+    }
+    else{
+        printf("Entered Strings Are Not Same");
+    }
+}
