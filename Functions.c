@@ -23,3 +23,34 @@ int main(){
     printf("\n");
     divide(x,y);
 }
+
+
+#include<stdio.h>
+void sort(int a[],int n){
+    int temp;
+    for(int j=0;j<n-1;j++){
+        for(int i=0;i<n-1-j;i++){
+            if(a[i]>a[i+1]){
+            temp=a[i];
+            a[i]=a[i+1];
+            a[i+1]=temp;
+            }
+        }
+    }
+}
+int main(){
+    int a[20],n,j;
+    printf("Enter Number Of Elements = ");
+    scanf("%d",&n);
+    
+    printf("Enter %d Numbers = ",n);
+    for(j=0;j<n;j++){
+        scanf("%d",&a[j]);
+    }
+    sort(a,n);
+    printf("Sorted Array = \n");
+    for(j=0;j<n;j++){
+        printf("%d\n",a[j]);
+    }
+    return 0;
+}
