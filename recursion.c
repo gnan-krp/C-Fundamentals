@@ -35,3 +35,26 @@ int main(){
     printf("Factorial = %d",ans);
     return 0;
 }
+
+
+#include <stdio.h>
+
+int sumDigits(int x) {
+    if (x == 0)
+        return 0;
+    else
+        return (x % 10) + sum(x / 10);
+}
+
+int main() {
+    int n, ans;
+
+    printf("Enter a number = ");
+    scanf("%d", &n);
+
+    ans = sum(n);
+
+    printf("Sum of digits = %d", ans);
+
+    return 0;
+}
