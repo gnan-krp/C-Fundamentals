@@ -16,3 +16,22 @@ int main(){
     return 0;
     
 }
+
+
+#include<stdio.h>
+int fact(int x){
+    if(x==0){
+        return 1;
+    }
+    else{
+        return x*fact(x-1);
+    }
+}
+int main(){
+    int ans,n;
+    printf("Enter A Number = ");
+    scanf("%d",&n);
+    ans=fact(n);
+    printf("Factorial = %d",ans);
+    return 0;
+}
