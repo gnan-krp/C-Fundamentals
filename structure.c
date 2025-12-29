@@ -100,3 +100,63 @@ int main(){
             printf("Product Not Found");
         }
 }
+
+
+#include<stdio.h>
+#include <string.h>
+struct product{
+    int id;
+    char name[20];
+    float price;
+}temp,p[5];
+int main(){
+    int index,match=0;
+    for(int i=0;i<5;i++){
+        printf("Enter Product %d Details = ",i+1);
+        
+        printf("Enter id = ");
+        scanf("%d",&p[i].id);
+        
+         printf("Enter Name = ");
+        scanf("%s",p[i].name);
+        
+         printf("Enter price = ");
+        scanf("%f",&p[i].price);
+    }
+    
+    for(int i = 0; i < 4; i++) {
+        for(int j = i + 1; j < 5; j++) {
+            if(strcmp(p[i].name, p[j].name) > 0) {
+                temp = p[i];
+                p[i] = p[j];
+                p[j] = temp;
+            }
+        }
+    }
+    
+    printf("\n\n===== PRODUCTS SORTED ALPHABETICALLY =====\n");
+    printf("ID\tName\tPrice\n");
+        
+        printf("Enter Product Id To Search = ");
+        scanf("%d",&index);
+        for(int i=0;i<5;i++){
+            if(p[i].id==index){
+                index=i;
+                match=1;
+                break;
+            }
+        }
+        if(match==1){
+             
+        printf("The Product Details Are = ");
+        
+        printf("%d\n",p[index].id);
+        
+         printf("%s\n",p[index].name);
+        
+         printf("%f\n",p[index].price);
+        }
+        else{
+            printf("Product Not Found");
+        }
+}
