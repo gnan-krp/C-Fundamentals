@@ -19,3 +19,31 @@ void main(){
  }
    printf("Vowels = %d\nConsonants = %d\nDigits = %d", v, c, d);
 }
+
+#include<stdio.h>
+void main(){
+    char str[50],letters[50], digits[50], special[50];
+    int i,l=0,d=0,s=0;
+    
+    printf("Enter A String = ");
+    scanf("%s",str);
+    
+    for(i=0;str[i]!='\0';i++){
+        if((str[i]>='A' && str[i]<='Z') || (str[i]>='a' && str[i]<='z')){
+            letters[l++]=str[i];
+        }
+        else if(str[i]>='0' && str[i]<='9'){
+            digits[d++]=str[i];
+        }
+        else{
+            special[s++]=str[i];
+        }
+    }
+    printf("Letters = %s\n",letters);
+    printf("Digits = %s\n",digits);
+    printf("Special Characters = %s\n",special);
+    printf("Number Of Letters = %d\n",l);
+    printf("Number Of Digits = %d\n",d);
+    printf("Number Of Special Characters = %d\n",s);
+
+}
